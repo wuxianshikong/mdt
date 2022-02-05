@@ -183,6 +183,7 @@ def main():
         get_baseAddress()
     except Exception:
         pass
+    # 加载热键和卡片字体
     config_load()
     keyboard.add_hotkey(switch_hotkey, status_change, args=(True, False, False))
     keyboard.add_hotkey(pause_hotkey, status_change, args=(False, True, False))
