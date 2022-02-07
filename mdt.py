@@ -71,7 +71,7 @@ def valid_cid(cid: int):
     else:
         return False
 
-
+# 主要函数
 def translate():
     global cid_temp_duel
     global cid_temp_deck
