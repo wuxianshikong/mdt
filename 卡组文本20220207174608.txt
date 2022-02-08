@@ -1,0 +1,58 @@
+#created by MDT https://github.com/SkywalkerJi/mdt 
+----------------主卡组: 40----------------
+1  妖刀-不知火    妖刀－不知火    Shiranui Spectralsword
+2  妖刀-不知火    妖刀－不知火    Shiranui Spectralsword
+3  妖刀-不知火    妖刀－不知火    Shiranui Spectralsword
+4  尸忍    シノビネクロ    Shinobi Necro
+5  尸忍    シノビネクロ    Shinobi Necro
+6  尸忍    シノビネクロ    Shinobi Necro
+7  齐唱僵尸    ユニゾンビ    Uni-Zombie
+8  灰流丽    灰流うらら    Ash Blossom & Joyous Spring
+9  灰流丽    灰流うらら    Ash Blossom & Joyous Spring
+10 灰流丽    灰流うらら    Ash Blossom & Joyous Spring
+11 逢魔之妖刀-不知火    逢魔ノ妖刀－不知火    Shiranui Spectralsword Shade
+12 逢魔之妖刀-不知火    逢魔ノ妖刀－不知火    Shiranui Spectralsword Shade
+13 逢魔之妖刀-不知火    逢魔ノ妖刀－不知火    Shiranui Spectralsword Shade
+14 马头鬼    馬頭鬼    Mezuki
+15 马头鬼    馬頭鬼    Mezuki
+16 不知火的宫司    不知火の宮司    Shiranui Spiritmaster
+17 不知火的宫司    不知火の宮司    Shiranui Spiritmaster
+18 不知火的武士    不知火の武士    Shiranui Samurai
+19 不知火的武士    不知火の武士    Shiranui Samurai
+20 不知火的隐者    不知火の隠者    Shiranui Solitaire
+21 不知火的隐者    不知火の隠者    Shiranui Solitaire
+22 不知火的隐者    不知火の隠者    Shiranui Solitaire
+23 牛头鬼    牛頭鬼    Gozuki
+24 牛头鬼    牛頭鬼    Gozuki
+25 牛头鬼    牛頭鬼    Gozuki
+26 不知火的武部    不知火の武部    Shiranui Squire
+27 不知火的武部    不知火の武部    Shiranui Squire
+28 死者苏生    死者蘇生    Monster Reborn
+29 左腕的代偿    左腕の代償    Left Arm Offering
+30 杂交种    クロス・ブリード    Cross Breed
+31 闪电风暴    ライトニング・ストーム    Lightning Storm
+32 逢华妖丽谭-不知火语    逢華妖麗譚－不知火語    Ghost Meets Girl - A Shiranui's Story
+33 逢华妖丽谭-不知火语    逢華妖麗譚－不知火語    Ghost Meets Girl - A Shiranui's Story
+34 逢华妖丽谭-不知火语    逢華妖麗譚－不知火語    Ghost Meets Girl - A Shiranui's Story
+35 不知火流 燕之太刀    不知火流 燕の太刀    Shiranui Style Swallow's Slash
+36 不知火流 燕之太刀    不知火流 燕の太刀    Shiranui Style Swallow's Slash
+37 不知火流 燕之太刀    不知火流 燕の太刀    Shiranui Style Swallow's Slash
+38 不知火流 轮回之阵    不知火流 輪廻の陣    Shiranui Style Samsara
+39 不知火流 轮回之阵    不知火流 輪廻の陣    Shiranui Style Samsara
+40 不知火流 轮回之阵    不知火流 輪廻の陣    Shiranui Style Samsara
+----------------额外卡组: 15----------------
+1  不死之魔王 骸骨恶魔    アンデット・スカル・デーモン    Archfiend Zombie-Skull
+2  刀神-不知火    刀神－不知火    Shiranui Samuraisaga
+3  瑚之龙    瑚之龍    Coral Dragon
+4  黑蔷薇龙    ブラック・ローズ・ドラゴン    Black Rose Dragon
+5  妖神-不知火    妖神－不知火    Shiranui Squiresaga
+6  战神-不知火    戦神－不知火    Shiranui Shogunsaga
+7  水晶翼同调龙    クリスタルウィング・シンクロ・ドラゴン    Crystal Wing Synchro Dragon
+8  炎神-不知火    炎神－不知火    Shiranui Sunsaga
+9  强袭黑羽-神立之鬼丸刀鸟    A BF－神立のオニマル    Assault Blackwing - Onimaru the Divine Thunder
+10 水晶机巧-继承玻纤    水晶機巧－ハリファイバー    Crystron Halqifibrax
+11 梦幻崩影·凤凰    トロイメア・フェニックス    Knightmare Phoenix
+12 吸血鬼吸食者    ヴァンパイア・サッカー    Vampire Sucker
+13 I：P伪装舞会莱娜    I：Pマスカレーナ    I:P Masquerena
+14 梦幻崩影·独角兽    トロイメア・ユニコーン    Knightmare Unicorn
+15 丽神-不知火    麗神－不知火    Shiranui Skillsaga Supremacy
