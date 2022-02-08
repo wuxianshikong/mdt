@@ -1,4 +1,5 @@
-import ctypes, sys
+import ctypes
+import sys
 import PySimpleGUI as sg
 import mdt_service as service
 import pyperclip
@@ -573,7 +574,6 @@ def main():
                 settings_win["-show_card_id-"].update(value=show_card_id)
                 settings_win["-show_types-"].update(value=show_types)
                 settings_win["-web_search-"].update(value=web_search)
-                print(web_search)
                 set_ui_lock(settings_win, ui_lock)
                 sync_ui = 1
             if ev == sg.WIN_CLOSED or ev == _("关闭"):

@@ -2,7 +2,7 @@
 
 Yu-Gi-Oh! Master Duel Translation Script
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/releases/latest) [![GitHub all releases](https://img.shields.io/github/downloads/SkywalkerJi/mdt/total)](https://github.com/SkywalkerJi/mdt#download) [![GitHub forks](https://img.shields.io/github/forks/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/network) [![GitHub stars](https://img.shields.io/github/stars/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/stargazers) [![GitHub license](https://img.shields.io/github/license/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/blob/master/LICENSE) ![Chinese translation](https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91-100%25-green) ![GitHub top language](https://img.shields.io/github/languages/top/SkywalkerJi/mdt)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/releases/latest) [![GitHub all releases](https://img.shields.io/github/downloads/SkywalkerJi/mdt/total)](https://github.com/SkywalkerJi/mdt#download) [![GitHub forks](https://img.shields.io/github/forks/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/network) [![GitHub stars](https://img.shields.io/github/stars/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/stargazers) [![GitHub license](https://img.shields.io/github/license/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/blob/master/LICENSE) ![Chinese translation](https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91-100%25-green) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/SkywalkerJi/mdt/GitHub%20Actions%20Build%20and%20Deploy)
 
 * 自动切换，自动查卡，全面覆盖Deck、Duel、Solo、Replay模式。
 * 高正确性，除非卡片数据本身有错。
@@ -13,7 +13,7 @@ Yu-Gi-Oh! Master Duel Translation Script
 * i18n，支持简体中文和繁体中文。
 * 高兼容性，点开即用，支持各种游戏内语言，最低可支持win7。
 * 一键导出Master Duel游戏卡组，兼容ygopro格式。
-* 可一键直达网页卡查和官方数据库。
+* 可一键直达网页卡查和官方数据库，MDT也有目前最好的[Secret Pack查询工具](https://ygo.xn--uesr8qr0rdwk.cn/)。
 * 支持全屏置顶、无边框、半透明。
 
 ![MDT](https://github.com/SkywalkerJi/mdt/raw/master/IMG/v0.2.5.png "MDT v0.2.5")
@@ -26,12 +26,13 @@ Yu-Gi-Oh! Master Duel Translation Script
 
 中国大陆用户可在[蓝奏云下载](https://wwi.lanzouj.com/b0176jyjc) 密码:5j6f
 
-你还可以在[Uncensor Patch](https://github.com/SkywalkerJi/mdt/releases/tag/v1.0.1-UncensorPatch)下载反和谐卡图补丁。
+你可以通过[YGO.御坂美琴.CN](https://ygo.xn--uesr8qr0rdwk.cn/)访问MDT网页工具。
 
+你还可以在[Uncensor Patch](https://github.com/SkywalkerJi/mdt/releases/tag/v1.0.1-UncensorPatch)下载反和谐卡图补丁。
 
 ## Usage
 
-目前MDT拥有两个版本，有GUI界面的版本（推荐）和纯命令行CLI界面。
+目前MDT拥有两个版本，有GUI界面的版本（推荐）和纯命令行CLI界面。此外MDT也提供网页工具。
 
 **从预打包的GUI版本（v0.2.x）启动（适合大部分用户）**
 
@@ -39,6 +40,11 @@ Yu-Gi-Oh! Master Duel Translation Script
 2. 右键使用**管理员权限**运行`mdt.exe`。
 3. 在组卡界面点击一张卡。
 4. 右键可打开更多功能。繁体中文用户右键切换语言。
+
+**使用网页工具[MDT-web](https://ygo.xn--uesr8qr0rdwk.cn/)**
+
+1. 打开[MDT-web](https://ygo.xn--uesr8qr0rdwk.cn/)
+2. 目前可模糊检索全部154个Secret Pack包内容。同样支持一键卡查，一键复制。
 
 **使用预打包的CLI版本**
 
@@ -133,6 +139,12 @@ python mdt_cli.py
 
 [![Video Views](https://bilistats.lonelyion.com/views?uid=2012479&style=social&label=BiliBili&format=short)](https://www.bilibili.com/video/av636233915)  [![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UC3kA_NGfQFHMMn-kja8GTFA?style=social&label=YouTube)](https://www.youtube.com/watch?v=ITXjWSsmEmc)
 
+
+*MDT-web*
+
+[![Video Views](https://bilistats.lonelyion.com/views?uid=2012479&style=social&label=BiliBili&format=short)](https://www.bilibili.com/video/av551332211)  [![YouTube Video Views](https://img.shields.io/youtube/views/AnzWFG2RZr0?style=social&label=YouTube)](https://www.youtube.com/watch?v=AnzWFG2RZr0)
+
+
 *卡图反和谐补丁*
 
 [![Video Views](https://bilistats.lonelyion.com/views?uid=2012479&style=social&label=BiliBili&format=short)](https://www.bilibili.com/video/av765979539)   [![YouTube Video Views](https://img.shields.io/youtube/views/ickw082Snwo?style=social&label=YouTube)](https://www.youtube.com/watch?v=ickw082Snwo)
@@ -169,7 +181,7 @@ python mdt_cli.py
   
 确认你是从本页所列途径下载的版本那就是误报。
 
-源代码是公开的，不可能加入病毒，如果实在不放心可以直接执行源代码。MDT在GitHub统计已经超过6k download，有足够多的人进行了源代码审查，没有出现过安全问题。
+源代码是公开的，不可能加入病毒，如果实在不放心可以直接执行源代码。MDT在GitHub统计已经[![GitHub all releases](https://img.shields.io/github/downloads/SkywalkerJi/mdt/total)](https://github.com/SkywalkerJi/mdt#download)，有足够多的人进行了源代码审查，没有出现过安全问题。
 
 目前MDT以功能开发为主，现阶段对抗杀毒软件需要大量的精力而且毫无必要。因此不打算主动解决此问题，请直接添加信任。
 </details>
@@ -235,6 +247,8 @@ CLI版本在MDT v0.2.3版本进行拆分，拆分后对CLI版本只做基础可�
 
 *v0.2.7*
 * 修复网页卡查设置不保存的bug。
+* 优化繁中翻译。
+* 增加一个[Secret Pack查询工具](https://ygo.xn--uesr8qr0rdwk.cn/)。
 
 *v0.2.6*
 * 修复点击关闭后进程未结束的bug。
