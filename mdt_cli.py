@@ -8,7 +8,6 @@ import win32con
 import configparser
 import ctypes, sys
 from click import clear
-
 config_file = "config.ini"
 cid_temp = 0
 cid_temp_duel = 0
