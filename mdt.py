@@ -105,6 +105,7 @@ def translate_check_thread():
     global sleep_time
     while not process_exit:
         if not pause:
+            print("main")
             translate()
         time.sleep(sleep_time)
 
@@ -114,6 +115,7 @@ def status_change(switch: bool, need_pause: bool, exit: bool):
     global process_exit
     process_exit = exit
     pause = need_pause
+    print("CHANGE")
 
 
 def get_baseAddress():
