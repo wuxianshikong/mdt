@@ -160,6 +160,27 @@ def main():
         [
             sg.pin(
                 sg.Frame(
+                    _("类型"),
+                    [
+                        [
+                            sg.T(
+                                key="-types-",
+                                enable_events=True,
+                                s=(40, 2),
+                            )
+                        ],
+                    ],
+                    title_color="#61E7DC",
+                    visible=show_types,
+                    key="-types_frame-",
+                    tooltip=_("右键选择更多功能"),
+                ),
+                expand_x=True,
+            )
+        ],
+        [
+            sg.pin(
+                sg.Frame(
                     _("灵摆"),
                     [
                         [
@@ -203,27 +224,6 @@ def main():
                 expand_x=True,
                 expand_y=True,
                 tooltip=_("右键选择更多功能"),
-            )
-        ],
-        [
-            sg.pin(
-                sg.Frame(
-                    _("类型"),
-                    [
-                        [
-                            sg.T(
-                                key="-types-",
-                                enable_events=True,
-                                s=(40, 2),
-                            )
-                        ],
-                    ],
-                    title_color="#61E7DC",
-                    visible=show_types,
-                    key="-types_frame-",
-                    tooltip=_("右键选择更多功能"),
-                ),
-                expand_x=True,
             )
         ],
         [
@@ -298,15 +298,16 @@ def main():
             _("恢复默认"),
             _("切换语言"),
             _("重启检测"),
+            _("卡包查询"),
             _("检查更新"),
-            _("反和谐补丁"),
             _("联系开发者"),
+            _("反和谐补丁"),
             _("关闭"),
         ],
     ]
     layout = [[card_frame]]
     window = sg.Window(
-        "MDT v0.2.6 @SkywalkerJi GPLv3",
+        "MDT v0.2.9 GPLv3",
         layout,
         default_element_size=(12, 1),
         font=("Microsoft YaHei", font_size),
@@ -423,8 +424,10 @@ def main():
             webbrowser.open("https://github.com/SkywalkerJi/mdt/releases/latest")
         elif event == _("反和谐补丁"):
             webbrowser.open(
-                "https://github.com/SkywalkerJi/mdt/releases/tag/v1.0.1-UncensorPatch"
+                "https://www.nexusmods.com/yugiohmasterduel/mods/1"
             )
+        elif event == _("卡包查询"):
+            webbrowser.open("https://ygo.xn--uesr8qr0rdwk.cn/")
         elif event == _("联系开发者"):
             webbrowser.open("https://github.com/SkywalkerJi/mdt#contact-us")
         if not settings_active and event == _("设置"):
