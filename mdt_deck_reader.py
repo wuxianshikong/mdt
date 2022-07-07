@@ -1,6 +1,7 @@
-import pymem
 import json
+
 import i18n
+import pymem
 
 _ = i18n.t
 
@@ -56,14 +57,14 @@ def get_database(path):
 def get_deck_dict():
     main_name = "masterduel.exe"
     module_name = "GameAssembly.dll"
-    ma_count_static = 0x01CCE3C0
-    ma_count_offsets = [0xB8, 0x00, 0xF8, 0x1C0, 0x90, 0x18]
-    ex_count_static = 0x01CCE3C0
-    ex_count_offsets = [0xB8, 0x00, 0xF8, 0x1C0, 0x98, 0x18]
-    ma_cards_static = 0x01CCE3C0
-    ma_cards_offsets = [0xB8, 0x00, 0xF8, 0x1C0, 0x90, 0x10, 0x20]
-    ex_cards_static = 0x01CCE3C0
-    ex_cards_offsets = [0xB8, 0x00, 0xF8, 0x1C0, 0x98, 0x10, 0x20]
+    ma_count_static = 0x01E9AC28
+    ma_count_offsets = [0xB8, 0x00, 0xF8, 0x1C8, 0x150, 0x48]
+    ex_count_static = 0x01E9AC28
+    ex_count_offsets = [0xB8, 0x00, 0xF8, 0x1C8, 0x150, 0x18]
+    ma_cards_static = 0x01E9AC28
+    ma_cards_offsets = [0xB8, 0x00, 0xF8, 0x1C8, 0x150, 0x40, 0x20]
+    ex_cards_static = 0x01E9AC28
+    ex_cards_offsets = [0xB8, 0x00, 0xF8, 0x1C8, 0x150, 0x10, 0x20]
     deck_dict = {"error": _("无法读取卡组信息")}
     try:
         pm = get_process(main_name)
@@ -150,6 +151,104 @@ def get_deck_string(locale: str):
             deck_string += f"{c:<2} {card_string}\n"
 
     return deck_string
+
+
+def ydk_converter(ydk_deck: str, game_client_locale: str = "en"):
+    if ydk_deck is None:
+        print(_("格式有误"))
+        return None
+
+    # 读取数据库，预载卡片信息
+    try:
+        db_name = "./locales/zh-CN/cards.json"
+        # cid -> id, en, jp
+        cards_db = get_database(db_name)
+        # id -> en, jp, cid
+        cards_db_cache = {
+            card_info["id"]: {
+                "jp_name": card_info["jp_name"],
+                "en_name": card_info["en_name"],
+                "cid": cid,
+            }
+            for (cid, card_info) in cards_db.items()
+        }
+    except Exception:
+        print(_("无法读取卡组信息"))
+        return None
+
+    result = []
+    for line in ydk_deck.split("\n"):
+        cards_id = line.strip()
+        if cards_id.startswith("#") or cards_id == "":
+            # 跳过注释和空行
+            continue
+        elif cards_id.startswith("!"):
+            # side deck
+            break
+        elif not cards_id.isdigit():
+            # 用户粘贴的未知字符
+            print(_("格式有误"))
+            return None
+
+        try:
+            # 获取卡片信息
+            card_info = cards_db_cache[int(cards_id)]
+        except Exception as e:
+            print(e)
+            print(_("查无此卡"))
+            return None
+
+        try:
+            # 获取卡片名称
+            result.append(
+                (f"{card_info[f'{game_client_locale}_name']}", card_info["cid"])
+            )
+        except Exception as e:
+            print(e)
+            print(_("格式有误"))
+            return None
+
+    return result
+
+
+def _check_two_array_not_same(deck1: list[int], deck2: list[int]):
+    """
+    给两个拥有重复元素的列表，返回各自中独立存在的元素
+    例：[1, 2, 2, 4] [2, 3, 4, 4] -> [1, 2] [3, 4]
+    复杂度：O(n)
+    """
+    l, r = 0, 0
+    error1 = []
+    error2 = []
+    while l < len(deck1) or r < len(deck2):
+        if l < len(deck1) and r < len(deck2) and deck1[l] == deck2[r]:
+            l += 1
+            r += 1
+        elif l < len(deck1) and (r == len(deck2) - 1 or deck1[l] < deck2[r]):
+            error1.append(deck1[l])
+            l += 1
+        elif r < len(deck2):
+            error2.append(deck2[r])
+            r += 1
+    return error1, error2
+
+
+def check_deck(ydk_deck: list[int], locale):
+    _dict = get_deck_dict()
+    if "error" not in _dict:
+        deck1 = sorted(list(map(int, _dict["ma_cid_list"] + _dict["ex_cid_list"])))
+        deck2 = sorted(ydk_deck)
+        error1, error2 = _check_two_array_not_same(deck1, deck2)
+
+        db_name = "./locales/" + locale + "/cards.json"
+        cards_db = get_database(db_name)
+        error1 = [cards_db[str(cid)]["cn_name"] for cid in error1]
+        error2 = [cards_db[str(cid)]["cn_name"] for cid in error2]
+        print(error1, "imported wrong in your deck.")
+        print(error2, "in ydk deck haven't been imported")
+    else:
+        print("卡组读取错误")
+    return {"error1": error1, "error2": error2}
 
 
 if __name__ == "__main__":

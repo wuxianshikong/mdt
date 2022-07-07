@@ -5,3 +5,8 @@ pywin32
 PySimpleGUI
 pyperclip
 python-i18n
+dhash
+Pillow
+opencv-python
+pyautogui
+numpy

@@ -1,11 +1,14 @@
-from threading import Thread
-import pymem
-import keyboard
-import time
-import json
 import configparser
 import ctypes
+import json
 import sys
+import time
+from threading import Thread
+
+import keyboard
+import pymem
+
+import mdt_cv
 
 config_file = "config.ini"
 cid_temp = 0
@@ -21,8 +24,13 @@ deck_addr = None
 duel_addr = None
 oppo_addr = None
 sleep_time = 0.1
+cv_mode = 0
 cards_db_CN = {}
 cards_db_TW = {}
+ur_tier_list = {}
+sr_tier_list = {}
+break_point = {}
+bgm_list = {}
 pause_hotkey = "ctrl+p"
 switch_hotkey = "ctrl+s"
 
@@ -42,7 +50,7 @@ def get_cid(type: int):
     while type == 1:
         try:
             deck_pointer_value = (
-                read_longlongs(pm, deck_addr, [0xB8, 0x0, 0xF8, 0x1D8]) + 0x20
+                read_longlongs(pm, deck_addr, [0xB8, 0x0, 0xF8, 0x1E0]) + 0x2C
             )
             deck_cid = pm.read_int(deck_pointer_value)
             return deck_cid
@@ -50,7 +58,7 @@ def get_cid(type: int):
             return 0
     while type == 2:
         try:
-            duel_pointer_value = read_longlongs(pm, duel_addr, [0xB8, 0x10]) + 0x44
+            duel_pointer_value = read_longlongs(pm, duel_addr, [0xB8, 0x10]) + 0x4C
             duel_cid = pm.read_int(duel_pointer_value)
             return duel_cid
         except Exception:
@@ -58,7 +66,7 @@ def get_cid(type: int):
     while type == 3:
         try:
             oppo_pointer_value = (
-                read_longlongs(pm, oppo_addr, [0xB8, 0x0, 0xF8, 0x140]) + 0x20
+                read_longlongs(pm, oppo_addr, [0xB8, 0x0, 0xF8, 0x138]) + 0x2C
             )
             oppo_cid = pm.read_int(oppo_pointer_value)
             return oppo_cid
@@ -67,10 +75,7 @@ def get_cid(type: int):
 
 
 def valid_cid(cid: int):
-    if cid > 4000 and cid < 20000:
-        return True
-    else:
-        return False
+    return cid > 4000 and cid < 20000
 
 # 主要函数
 def translate():
@@ -79,24 +84,27 @@ def translate():
     global cid_temp_oppo
     global cid_show_gui
     global baseAddress
-    if baseAddress is None:
-        try:
-            get_baseAddress()
-        except Exception:
-            return
-    cid_deck = get_cid(1)
-    cid_duel = get_cid(2)
-    cid_oppo = get_cid(3)
+    if cv_mode == 0:
+        if baseAddress is None:
+            try:
+                get_baseAddress()
+            except Exception:
+                return
+        cid_deck = get_cid(1)
+        cid_duel = get_cid(2)
+        cid_oppo = get_cid(3)
 
-    if valid_cid(cid_oppo) and cid_oppo != cid_temp_oppo:
-        cid_temp_oppo = cid_oppo
-        cid_show_gui = cid_oppo
-    if valid_cid(cid_deck) and cid_deck != cid_temp_deck:
-        cid_temp_deck = cid_deck
-        cid_show_gui = cid_deck
-    if valid_cid(cid_duel) and cid_duel != cid_temp_duel:
-        cid_temp_duel = cid_duel
-        cid_show_gui = cid_duel
+        if valid_cid(cid_oppo) and cid_oppo != cid_temp_oppo:
+            cid_temp_oppo = cid_oppo
+            cid_show_gui = cid_oppo
+        if valid_cid(cid_deck) and cid_deck != cid_temp_deck:
+            cid_temp_deck = cid_deck
+            cid_show_gui = cid_deck
+        if valid_cid(cid_duel) and cid_duel != cid_temp_duel:
+            cid_temp_duel = cid_duel
+            cid_show_gui = cid_duel
+    elif cv_mode == 1:
+        cid_show_gui = mdt_cv.get_scan()
 
 
 def translate_check_thread():
@@ -129,9 +137,9 @@ def get_baseAddress():
         pm.process_handle, "GameAssembly.dll"
     ).lpBaseOfDll
     # deck 组卡界面 duel 决斗界面 oppo 回放
-    deck_addr = baseAddress + int("0x01CCE3C0", base=16)
-    duel_addr = baseAddress + int("0x01BD3FD8", base=16)
-    oppo_addr = baseAddress + int("0x01CCE3C0", base=16)
+    deck_addr = baseAddress + int("0x01E9AC28", base=16)
+    duel_addr = baseAddress + int("0x01DBEC88", base=16)
+    oppo_addr = baseAddress + int("0x01E9AC28", base=16)
 
 
 # UAC判断
@@ -157,6 +165,10 @@ def config_load():
     global switch_hotkey
     global cards_db_CN
     global cards_db_TW
+    global ur_tier_list
+    global sr_tier_list
+    global break_point
+    global bgm_list
     con = configparser.ConfigParser()
     try:
         con.read(config_file, encoding="utf-8")
@@ -177,6 +189,31 @@ def config_load():
             cards_db_TW = json.load(f)
     except Exception:
         pass
+    try:
+        with open("./data/ur.json", "rb") as f:
+            ur_tier_list = json.load(f)
+    except Exception:
+        pass
+    try:
+        with open("./data/sr.json", "rb") as f:
+            sr_tier_list = json.load(f)
+    except Exception:
+        pass
+    try:
+        with open("./data/breakpoint.json", "rb") as f:
+            break_point = json.load(f)
+    except Exception:
+        pass
+    try:
+        with open("./data/bgm.json", "rb") as f:
+            bgm_list = json.load(f)
+    except Exception:
+        pass
+
+
+def get_current_cid():
+    translate()
+    return int(cid_show_gui)
 
 
 def main():

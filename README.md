@@ -2,9 +2,9 @@
 
 Yu-Gi-Oh! Master Duel Translation Script
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/releases/latest) [![GitHub all releases](https://img.shields.io/github/downloads/SkywalkerJi/mdt/total)](https://github.com/SkywalkerJi/mdt#download) [![GitHub forks](https://img.shields.io/github/forks/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/network) [![GitHub stars](https://img.shields.io/github/stars/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/stargazers) [![GitHub license](https://img.shields.io/github/license/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/blob/master/LICENSE) ![Chinese translation](https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91-100%25-green) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/SkywalkerJi/mdt/GitHub%20Actions%20Build%20and%20Deploy) [![Steam Game Ver](https://img.shields.io/badge/Steam-1.0.2-informational)](https://store.steampowered.com/app/1449850/YuGiOh_Master_Duel/)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/releases/latest) [![GitHub all releases](https://img.shields.io/github/downloads/SkywalkerJi/mdt/total)](https://github.com/SkywalkerJi/mdt#download) [![GitHub forks](https://img.shields.io/github/forks/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/network) [![GitHub stars](https://img.shields.io/github/stars/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/stargazers) [![GitHub license](https://img.shields.io/github/license/SkywalkerJi/mdt)](https://github.com/SkywalkerJi/mdt/blob/master/LICENSE) ![Chinese translation](https://img.shields.io/badge/%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91-100%25-green) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/SkywalkerJi/mdt/GitHub%20Actions%20Build%20and%20Deploy) [![Steam Game Ver](https://img.shields.io/badge/Steam-1.1.2-informational)](https://store.steampowered.com/app/1449850/YuGiOh_Master_Duel/)
 
-* 自动切换，自动查卡，全面覆盖Deck、Duel、Solo、Replay模式。
+* 自动切换，自动查卡，全面覆盖Deck、Duel、Solo、Replay、Shop模式。
 * 高正确性，除非卡片数据本身有错。
 * 超快识别速度，低于0.000001s。
 * 极低占用，CPU占用忽略不计。
@@ -12,11 +12,14 @@ Yu-Gi-Oh! Master Duel Translation Script
 * 开源，你可以直接执行源代码并定制你自己的版本。
 * i18n，支持简体中文和繁体中文。
 * 高兼容性，点开即用，支持各种游戏内语言，最低可支持win7。
-* 一键导出Master Duel游戏卡组，兼容ygopro格式。
-* 可一键直达网页卡查和官方数据库，MDT也有目前最好的 [Secret Pack查询工具](https://ygo.xn--uesr8qr0rdwk.cn/)。
+* 支持内存检测和图像指纹两种识别模式。
+* 一键导入导出游戏卡组，支持`.ydk`格式。
+* 可一键直达网页卡查和官方数据库，MDT也有 [Secret Pack查询工具](https://ygo.xn--uesr8qr0rdwk.cn/)。
 * 支持全屏置顶、无边框、半透明。
+* 支持对重要UR，主流断点进行警示。
+* 支持自定义语音、BGM、召唤词。
 
-![MDT](https://github.com/SkywalkerJi/mdt/raw/master/IMG/v0.2.5.png "MDT v0.2.5")
+![MDT](https://github.com/SkywalkerJi/mdt/raw/master/IMG/v0.2.12.png "MDT v0.2.12")
 
 ## Download
 
@@ -24,7 +27,7 @@ Yu-Gi-Oh! Master Duel Translation Script
 
 如果是Windows7系统请下载后缀`_win7`的版本，如果想使用CLI请下载`_CLI`的版本。
 
-中国大陆用户可在 [蓝奏云下载](https://wwi.lanzouj.com/b0176jyjc) 密码:5j6f
+中国大陆用户可在 [蓝奏云](https://wwi.lanzouj.com/b0176jyjc) 密码:5j6f 或者 [Microsoft OneDrive](https://1drv.ms/u/s!Apo8OlF1smGK6nS7sXukI9Bt9xOd?e=bbzDea) 分流下载。
 
 你可以通过 [YGO.御坂美琴.CN](https://ygo.xn--uesr8qr0rdwk.cn/) 访问MDT网页工具。
 
@@ -40,16 +43,16 @@ Yu-Gi-Oh! Master Duel Translation Script
 2. 右键使用**管理员权限**运行`mdt.exe`。
 3. 在组卡界面点击一张卡。
 4. 右键可打开更多功能。繁体中文用户右键切换语言。
+5. 右键设置中可以切换内存或图像识别模式。图像识别模式下可以进行商店和抽卡页面汉化。
 
 **使用网页工具 [MDT-web](https://ygo.xn--uesr8qr0rdwk.cn/)**
 
 1. 打开 [MDT-web](https://ygo.xn--uesr8qr0rdwk.cn/)
 2. 目前可模糊检索全部154个Secret Pack包内容。同样支持一键卡查，一键复制。
-
-**使用预打包的CLI版本**
+3. 支持转换YGOpro卡组格式为日英双语，点击可复制到游戏中。
 
 <details>
-   <summary>点击CLI使用说明</summary>
+   <summary>使用预打包的CLI版本</summary>
 
 命令行界面这是MDT v0.1.x版本的默认UI，在v0.2.3开始进行了拆分。
 
@@ -65,8 +68,17 @@ Yu-Gi-Oh! Master Duel Translation Script
 | ctrl+p | 暂停检测 |
 | ctrl+q | 退出程序 |
 
-4. 可在`config.ini`文件中进行功能配置。以下是一份样例，可以直接复制粘贴。
-   如果要进行CLI窗口置顶设置，尤其要注意窗口名（`lp_window_name`）选项。使用默认配置文件时可以把软件放在C:\mdt 目录下即可进行窗口置顶。注意ini时注意注释行开头必须是`; `
+4. 如果要进行CLI窗口置顶设置，要注意config.ini文件中窗口名（`lp_window_name`）选项。使用默认配置文件时可以把软件放在C:\mdt 目录下即可进行窗口置顶。可查看下一节，配置文件说明。
+</details>
+
+<details>
+   <summary>功能配置文件说明</summary>
+
+1. 可在`config.ini`文件中进行功能配置。以下是一份带有注释的样例。
+
+   cli组为CLI版本设置项，gui组为GUI版本设置项。
+
+   编辑ini时注意注释行开头必须是`; `
 ```
 [cli] 
 ; CLI基本设置
@@ -117,13 +129,62 @@ show_jp_name = 1
 ; 日文卡名 1开启 0取消
 show_card_id = 1
 ; 卡密显示 1开启 0取消
+show_notice = 1
+; 显示提示 1开启 0取消
+no_scrollbar = 1
+; 隐藏滚动条 1隐藏 0显示
+cv_mode = 0
+; 识别模式 1图像 0内存
+play_diy_bgm = 1
+; 播放自定义BGM 1开启 0关闭
 ```
+
+2. 自定义BGM。（v0.2.13后支持）
+
+   在选中一张卡牌时，自动播放BGM或召唤词。样例为青眼亚白龙。可以在设置中开启。
+```
+自定义BGM配置文件位于`/data/bgm.json`。
+json格式
+
+{
+    "12253": {
+        "cn_name": "青眼亚白龙",
+        "file": "Blue_audio.wav"
+    },
+    "666666666666": {
+        "cn_name": "样例",
+        "file": "wav音频文件"
+    }
+}
+
+数字为cid值，可以在选中卡片后点击英文或日文名跳转官方数据库，在网址url中找到 cid=某个数字 。
+中文名只做标识用。
+音频文件目前只支持wav格式，其他音频格式（MP3，aac等）请转码为wav格式。
+```
+
+3. 自定义卡表
+```
+自定义卡表文件也位于`/data/`目录下。
+sr.json SR优先级卡表
+ur.json UR优先级卡表
+breakpoint.json 断点卡表
+格式类似自定义BGM
+```
+| TIER值 | 含义     |
+| ------ | -------- |
+| 1 | 非常重要UR |
+| 2 | 重要UR |
+| 3| 重要SR |
+| 99|无效断点 |
+| 98| 除外断点 |
+| 97| 破坏断点 |
+
+对卡表进行PR前，推荐开启issue。
+
 </details>
 
-**从源代码执行**
-
 <details>
-   <summary>点击展开</summary>
+   <summary>从源代码执行</summary>
 
 ```
 pip install -r requirements.txt
@@ -135,14 +196,13 @@ python mdt_cli.py
 
 **视频演示**
 
-*v0.2.9版本*
+*v0.2.12版本*
 
-[![Video Views](https://bilistats.lonelyion.com/views?uid=2012479&style=social&label=BiliBili&format=short)](https://www.bilibili.com/video/av809137781)  [![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UC3kA_NGfQFHMMn-kja8GTFA?style=social&label=YouTube)](https://www.youtube.com/watch?v=uyDORr6GIbM)
+[![Video Views](https://bilistats.lonelyion.com/views?uid=2012479&style=social&label=BiliBili&format=short)](https://www.bilibili.com/video/av681943783)  [![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UC3kA_NGfQFHMMn-kja8GTFA?style=social&label=YouTube)](https://www.youtube.com/watch?v=lsfBUmYeQRw)
 
 *MDT-web*
 
 [![Video Views](https://bilistats.lonelyion.com/views?uid=2012479&style=social&label=BiliBili&format=short)](https://www.bilibili.com/video/av551332211)  [![YouTube Video Views](https://img.shields.io/youtube/views/AnzWFG2RZr0?style=social&label=YouTube)](https://www.youtube.com/watch?v=AnzWFG2RZr0)
-
 
 *卡图反和谐补丁*
 
@@ -150,6 +210,19 @@ python mdt_cli.py
 
 <details>
    <summary>旧版演示</summary>
+
+*v0.2.11版本*
+
+[![Video Views](https://bilistats.lonelyion.com/views?uid=2012479&style=social&label=BiliBili&format=short)](https://www.bilibili.com/video/av211976664)  [![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UC3kA_NGfQFHMMn-kja8GTFA?style=social&label=YouTube)](https://www.youtube.com/watch?v=7u684z4KVIQ)
+
+
+*v0.2.10版本*
+
+[![Video Views](https://bilistats.lonelyion.com/views?uid=2012479&style=social&label=BiliBili&format=short)](https://www.bilibili.com/video/av766762394)  [![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UC3kA_NGfQFHMMn-kja8GTFA?style=social&label=YouTube)](https://www.youtube.com/watch?v=oWNtD6Ko0yo)
+
+*v0.2.9版本*
+
+[![Video Views](https://bilistats.lonelyion.com/views?uid=2012479&style=social&label=BiliBili&format=short)](https://www.bilibili.com/video/av809137781)  [![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UC3kA_NGfQFHMMn-kja8GTFA?style=social&label=YouTube)](https://www.youtube.com/watch?v=uyDORr6GIbM)
 
 *v0.2.5版本*
 
@@ -208,6 +281,7 @@ MDT以玩家数据安全为己任，不会在有风险情况下进行检测，�
 
 另外这个游戏没有反作弊，从经济角度考虑一个99%依赖服务端的游戏根本没必要进行检测，参考游戏王duel link。
 
+如果你实在担心的话可以在设置中切换使用图像识别模式。
 </details>
 
 <details>
@@ -228,6 +302,36 @@ CLI版本在MDT v0.2.3版本进行拆分，拆分后对CLI版本只做基础可�
 
 </details>
 
+<details>
+   <summary>Q6：以前能使用，现在无法使用？切换不同账号后无法使用？我确定开启条件正确，但是一直显示“等待检测”？</summary>
+
+先在游戏的开始页面（game start 那个页面），确认左上角的游戏版本号和readme中支持的游戏版本号一致。如果不一致请更新MDT或更新游戏。
+
+确认其他条件正确，比如：使用管理员权限开启，已经完整解压全部文件，右键exe属性中解除锁定，在安全软件中添加信任，点击一张卡等。
+
+如果条件都正确，请尝试更改steam存档缓存文件后缀。一般在游戏安装位置，目录地址类似`SteamLibrary\steamapps\common\Yu-Gi-Oh! Master Duel\LocalData`。里面有一个形如`93b16f2`的文件夹。先备份一下，然后在这个文件夹后面加几个1，`93b16f21111111111111111`。再开游戏和mdt试一下。
+
+</details>
+
+<details>
+   <summary>Q7：如何调整无边框模式下的窗口大小？</summary>
+
+先在边框模式下调整大小。然后右键保存窗口位置。再在设置中切换为无边框。
+
+</details>
+
+<details>
+   <summary>Q8：为何MDT之前一直不支持商店和抽卡页面汉化？现在又可以支持？</summary>
+
+之前通过内存读取的方式暂时无法在抽卡页面获得稳定指针地址，如果要实施检测需要对游戏进行注入，风险较高。所以一直在考虑中没有实施。
+
+在v0.2.12版本后，引入了图像指纹识别，mdt在图像模式下可以通过窗口截图对游戏进行非侵入式检测，所以可以对抽卡和商店界面进行汉化支持。
+
+如果有更好的基于内存的识别模式，还是一样欢迎提交 issue 或 PR。
+
+</details>
+
+
 ## Contributing
 
 有其他指针或功能欢迎提交 [issue](https://github.com/SkywalkerJi/mdt/issues/new) 或 Pull Request。
@@ -237,22 +341,76 @@ CLI版本在MDT v0.2.3版本进行拆分，拆分后对CLI版本只做基础可�
 如果你有错误报告、建议、想法，请随时通过以下方式联系开发者：
 
 * [issue](https://github.com/SkywalkerJi/mdt/issues/new)
+* [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UC3kA_NGfQFHMMn-kja8GTFA?style=social)](https://www.youtube.com/channel/UC3kA_NGfQFHMMn-kja8GTFA?sub_confirmation=1)
+* [Telegram](https://t.me/ygomasterduel)
+* [![Twitter Follow](https://img.shields.io/twitter/follow/Skywalker_Ji?style=social&label=Follow)](https://twitter.com/Skywalker_Ji)
 * [NGA](https://bbs.nga.cn/read.php?tid=30415633)
 * [巴哈姆特](https://forum.gamer.com.tw/C.php?bsn=725&snA=54550&tnum=1)
 * [Q群 710144213](https://jq.qq.com/?_wv=1027&k=uyFt3qi0)
-* [Telegram](https://t.me/ygomasterduel)
-* [![Twitter Follow](https://img.shields.io/twitter/follow/Skywalker_Ji?style=social&label=Follow)](https://twitter.com/Skywalker_Ji)
 * [![Followers](https://bilistats.lonelyion.com/followers?uid=2012479&style=social&format=short&label=BiliBili%20关注)](https://space.bilibili.com/2012479)
-* [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UC3kA_NGfQFHMMn-kja8GTFA?style=social)](https://www.youtube.com/channel/UC3kA_NGfQFHMMn-kja8GTFA?sub_confirmation=1)
 * 或其他途径。
+
+报告故障时请附上全屏截图、Windows系统版本、MDT版本号和游戏版本号，方便快速定位。
 
 ## Changelog
 
-*v0.2.9*
-* 对游戏steam版本V1.0.2进行支持。
+*v0.2.20*
+* 修复导出卡组时主卡组为0的bug。
+
+*v0.2.19*
+* 对游戏steam版本1.1.2进行支持。
 
 <details>
    <summary>展开过往版本</summary>
+*v0.2.18*
+* 修复卡组导出功能。
+
+*v0.2.17*
+* 图像模式更新6月10日新卡hash。by wtof1996
+* 修复识别线程失效问题。by chunibyo
+* 将效果框置为只读。by funnyvalentine2363
+* 去除了失效的卡组导出功能。
+
+*v0.2.16*
+* 对游戏steam版本V1.1.1进行支持。
+
+*v0.2.15*
+* 添加ydk卡组自动导入功能。感谢@chunibyo-wly 的贡献。 
+
+*v0.2.14 beta*
+* 支持4月新卡图像识别。感谢@wtof1996 的贡献。
+
+*v0.2.13*
+* 自定义BGM支持，在选中一张卡牌时，自动播放BGM或召唤词。样例为青眼亚白龙。可以在设置中开启。
+* 分词处理。
+* 图像模式兼容对手卡组页面。
+* 调整断点表。
+* 调整UR优先级。基于 NTUCGM 3/3版本。
+* 修复图像模式下部分网页卡查跳转失效问题。
+
+*v0.2.12*
+* 加入图像指纹识别。感谢 md_hover@wangyi041228 的贡献。
+* 在图像模式下，支持商店页面和抽卡界面汉化识别。
+* 可以在右键设置中进行模式切换。
+* 一个漂亮的ico，感谢bootstrap。
+
+*v0.2.11*
+* 考虑无障碍视觉，取消了上一版本中的红蓝颜色区分，改为文字显示。
+* 修改断点提示底色，提高文字可读性。
+* 添加重要SR提示，对352张重要SR进行分解提示，分级基于 NTUCGM。
+* 设置中可选是否启用提示信息（包括重要UR，重要SR，主流断点提示）。 
+* 提示框可一键跳转 masterduelmeta.com，可查询当前卡牌实时使用统计。
+* 添加对影依融合、No.75的断点提示。
+* MDT-web 添加 YGOpro 卡组格式转换功能，可点击将日文、英文卡名复制到 master duel进行卡组导入，支持手机。
+
+*v0.2.10*
+* 支持配置隐藏滚动条。
+* 添加重要UR提示，数据基于 NTUCGM。重要UR的卡密颜色会变更：红色为可以定义环境的强力卡片，是T1主流套牌的核心部件，不建议分解。绿色为部分卡组的构筑主力，如果要分解请务必确认。白色为普通UR，可考虑分解。
+* 添加主流卡组断点提示。主流卡组核心断点会进行警告，卡密背景底色变为橙色。目前支持：黄金国，龙辉巧，闪刀姬，幻影骑士团，电脑堺，恩底弥翁，召唤师，龙女仆，魔救，雷龙，英雄，调皮宝贝，源数，割草，抒情歌鸲，魔偶甜点，龙link。
+* 提示卡表可在data文件夹中自定义。或开启issue提交，我将在确定卡表后在下个版本中进行添加。
+
+*v0.2.9*
+* 对游戏steam版本V1.0.2进行支持。
 
 *v0.2.8*
 * 添加反和谐补丁mod发布地址。
@@ -370,6 +528,7 @@ CLI版本在MDT v0.2.3版本进行拆分，拆分后对CLI版本只做基础可�
 
 ## Related Efforts
 
+* [md_hover](https://github.com/wangyi041228/md_hover) 提供了本项目的图像指纹识别功能。
 * [Uncensored GFX](https://www.nexusmods.com/yugiohmasterduel/mods/1) 反和谐卡图替换补丁
 * [MasterDuelSimpleTranslateTool](https://github.com/PatchouliTC/MasterDuelSimpleTranslateTool) 基于图像指纹识别的翻译工具，提供了本项目的CLI版本UI基础。
 
